@@ -21,8 +21,8 @@ def page2():
     st.sidebar.markdown("Monte-Carlo Sim️")
 
 page_names_to_funcs = {
-    "Main Page": main_page,
-    "Page 2": page2
+    "Black-Scholes": main_page,
+    "Monte-Carlo Sim": page2
 }
 
 selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
