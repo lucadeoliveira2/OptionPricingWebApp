@@ -3,9 +3,9 @@ import streamlit as st
 import numpy as np
 from scipy.stats import norm
 import pandas
-#import matplotlib.pyplot as plt
-#import seaborn as sns
-#from matplotlib.colors import LinearSegmentedColormap
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.colors import LinearSegmentedColormap
 
 # Creating the page
 
