@@ -20,13 +20,29 @@ def page2():
     st.markdown("Monte-Carlo Sim")
     st.sidebar.markdown("Monte-Carlo Sim️")
 
-page_names_to_funcs = {
-    "Black-Scholes": main_page,
-    "Monte-Carlo Sim": page2
-}
+def main():
+    """A streamlit app template"""
 
-selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
-page_names_to_funcs[selected_page]()
+    st.sidebar.title("Tools")
+
+    PAGES = {
+        "Black-Scholes": main_page,
+        "Monte-Carlo Sim": page2
+    }
+
+    # Select pages
+    # Use dropdown if you prefer
+    selection = st.sidebar.radio("Pages", list(PAGES.keys()))
+    #sidebar_caption()
+
+    page = PAGES[selection]
+
+    with st.spinner(f"Loading Page {selection} ..."):
+        page()
+
+
+if __name__ == "__main__":
+    main()
 
 # Implementing BS formula
 
