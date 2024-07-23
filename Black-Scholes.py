@@ -12,38 +12,6 @@ from matplotlib.colors import LinearSegmentedColormap
 st.title("Option Pricing Web App")
 st.header("Black-Scholes Formula Option Pricing")
 
-def main_page():
-    st.markdown("Black-Scholes")
-    st.sidebar.markdown("Black-Scholes")
-
-def page2():
-    st.markdown("Monte-Carlo Sim")
-    st.sidebar.markdown("Monte-Carlo Sim️")
-
-def main():
-    """A streamlit app template"""
-
-    st.sidebar.title("Tools")
-
-    PAGES = {
-        "Black-Scholes": main_page,
-        "Monte-Carlo Sim": page2
-    }
-
-    # Select pages
-    # Use dropdown if you prefer
-    selection = st.sidebar.radio("Pages", list(PAGES.keys()))
-    #sidebar_caption()
-
-    page = PAGES[selection]
-
-    with st.spinner(f"Loading Page {selection} ..."):
-        page()
-
-
-if __name__ == "__main__":
-    main()
-
 # Implementing BS formula
 
 def blackScholes(S, K, T, vol, r):
