@@ -74,4 +74,3 @@ for j in range(M):
 meanval = expsum/M
 currentval = meanval*np.exp(-r*T)
 st.metric(label="Put Price", value=f"${currentval:,.3f}")
-
