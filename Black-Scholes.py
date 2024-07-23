@@ -1,7 +1,7 @@
 #Hiiiiii
 import streamlit as st
 import numpy as np
-from scipy.stats import norm
+# from scipy.stats import norm
 import pandas
 import matplotlib.pyplot as plt
 import seaborn as sns
