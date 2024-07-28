@@ -103,7 +103,7 @@ axes[1].set_yticks(np.arange(len(volatilities)) + 0.5,
 axes[1].set_xlabel("Underlying Price ($)")
 axes[1].set_ylabel("Volatility (%) ")
 axes[1].set_title("Put Option Price ($)")
-st.set_option('deprecation.showPyplotGlobalUse', False) # Removing warning
+# st.set_option('deprecation.showPyplotGlobalUse', False) # Removing warning
 st.pyplot()
 
 # P&L charts
