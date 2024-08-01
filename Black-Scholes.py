@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.colors import LinearSegmentedColormap
 
-# Creating the page
+# Creating the pages
 
 st.title("Option Pricing Web App")
 st.header("Black-Scholes Formula Option Pricing")
