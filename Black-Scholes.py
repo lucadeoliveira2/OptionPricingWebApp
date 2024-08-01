@@ -10,6 +10,7 @@ from matplotlib.colors import LinearSegmentedColormap
 
 st.title("Option Pricing Web App")
 st.header("Black-Scholes Formula Option Pricing")
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Implementing BS formula
 
