@@ -146,3 +146,18 @@ plt.xlabel("Paid Price ($)")
 plt.ylabel("Realised Volatility (%)")
 plt.title(f"Black-Scholes Theoretical Edge for the {optiontype} Option")
 st.pyplot()
+
+# Implied Vol Calculator
+st.header("Implied Volatility Calculator")
+col1, col2, col3 = st.columns(3)
+paidprice = col1.number_input(label='Option Cost ($)', min_value=0.000, value=1.000, step=0.001)
+optionvega = col2.number_input(label='Option Vega (Absolute Value)', min_value=0.000, value=0.500, step=0.001)
+optiontype = col3.selectbox(label="Option Type", options=["Call", "Put"])
+if optiontype == "Call":
+    theoreticalprice = priceC
+else:
+    theoreticalprice = priceP
+pricediff = paidprice - theoreticalprice
+volatilitypremium = pricediff/optionvega
+impliedvolatility = vol + volatilitypremium
+print(f"IV of the {optiontype} option is: {impliedvolatility:%.2f}")
