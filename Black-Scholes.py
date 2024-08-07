@@ -160,4 +160,4 @@ else:
 pricediff = paidprice - theoreticalprice
 volatilitypremium = pricediff/optionvega
 impliedvolatility = vol + volatilitypremium
-print(f"IV of the {optiontype} option is: {impliedvolatility:%.2f}")
+print(f"IV of the {optiontype} option is: {impliedvolatility:%.2f}") #
