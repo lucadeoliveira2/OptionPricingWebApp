@@ -53,6 +53,22 @@ st.subheader("Theoretical Prices")
 st.metric(label="Call Price", value=f"${priceC:,.3f}")
 st.metric(label="Put Price", value=f"${priceP:,.3f}")
 
+# Implied Vol Calculator
+st.subheader("Implied Volatility Calculator")
+col1, col2, col3 = st.columns(3)
+paidprice = col1.number_input(label='Option Cost ($)', min_value=0.000, value=1.000, step=0.001)
+optionvega = col2.number_input(label='Option Vega (Absolute Value)', min_value=0.000, value=0.500, step=0.001)
+optiontype2 = col3.selectbox(label="Option Type ", options=['Call ', 'Put '])
+if optiontype2 == "Call ":
+    theoreticalprice = priceC
+else:
+    theoreticalprice = priceP
+pricediff = paidprice - theoreticalprice
+volatilitypremium = pricediff/optionvega
+impliedvolatility = vol*100 + volatilitypremium
+
+st.metric(label=f"IV of the {optiontype2} option:", value=f"{impliedvolatility:.2f}%")
+
 # Heatmap Inputs
 
 st.subheader("Price Heatmaps")
@@ -146,19 +162,3 @@ plt.xlabel("Paid Price ($)")
 plt.ylabel("Realised Volatility (%)")
 plt.title(f"Black-Scholes Theoretical Edge for the {optiontype} Option")
 st.pyplot()
-
-# Implied Vol Calculator
-st.header("Implied Volatility Calculator")
-col1, col2, col3 = st.columns(3)
-paidprice = col1.number_input(label='Option Cost ($)', min_value=0.000, value=1.000, step=0.001)
-optionvega = col2.number_input(label='Option Vega (Absolute Value)', min_value=0.000, value=0.500, step=0.001)
-optiontype2 = col3.selectbox(label="Option Type ", options=['Call ', 'Put '])
-if optiontype2 == "Call ":
-    theoreticalprice = priceC
-else:
-    theoreticalprice = priceP
-pricediff = paidprice - theoreticalprice
-volatilitypremium = pricediff/optionvega
-impliedvolatility = vol*100 + volatilitypremium
-
-st.write(f"IV of the {optiontype2} option is: {impliedvolatility:.2f}%") #
