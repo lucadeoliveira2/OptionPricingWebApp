@@ -161,4 +161,4 @@ pricediff = paidprice - theoreticalprice
 volatilitypremium = pricediff/optionvega
 impliedvolatility = vol*100 + volatilitypremium
 
-st.write(f"IV of the {optiontype2} option is: {impliedvolatility:.2f}%")
+st.write(f"IV of the {optiontype2} option is: {impliedvolatility:.2f}%") #
