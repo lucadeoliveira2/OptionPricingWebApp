@@ -9,9 +9,7 @@ import matplotlib.pyplot as plt
 
 # Layout
 
-st.title("Option Pricing Web App")
-
-st.header("Monte-Carlo Simulation Option Pricing")
+st.title("Monte-Carlo Option Pricing")
 st.write("We can price options using Monte-Carlo simulations, which assumes a risk-neutral and arbitrage-free environment. First, we need to simulate Brownian motion using normal deviates (normally distributed entries). The normal deviates were computed using the Box-Muller method and uniform deviates. Finally, the Euler-Maruyama method was used to compute the path of the underlying price, such that prices change every minute of active trading. Therefore, options that have longer expirations will include more steps in the process.")
 
 col1, col2, col3 = st.columns(3)
