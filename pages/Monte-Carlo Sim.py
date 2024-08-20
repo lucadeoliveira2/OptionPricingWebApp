@@ -19,7 +19,7 @@ S = col1.number_input("Current Price", min_value=0.0, value=100.0, step=0.01)
 K = col2.number_input("Exercise Price", min_value=0.0, value=102.0, step=0.01)
 T = col3.number_input("Days to Expiry", min_value=0, value=30)/365 # Has to be divided by 365
 vol = col1.number_input("Volatility (%)", min_value=0.0, value=12.0, step=0.01)/100
-r = col3.number_input("Interest Rate (%)", min_value=0.0, value=5.0, step=0.01)/100
+r = col3.number_input("Interest Rate (%)", min_value=0.0, value=4.5, step=0.01)/100
 
 # First we set parameters
 T = T  # Time to expiration
