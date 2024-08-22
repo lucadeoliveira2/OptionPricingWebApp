@@ -9,6 +9,8 @@ from matplotlib.colors import LinearSegmentedColormap
 # Creating the pages
 
 st.title("Black-Scholes Option Pricing")
+url = "https://www.linkedin.com/in/luca-de-oliveira-424242236?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTfiF7SojRauelDIPie%2FQ5A%3D%3D"
+st.write("Application made by Luca De Oliveira: [link](%s)" % url)
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Implementing BS formula
