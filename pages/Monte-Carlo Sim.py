@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 st.title("Monte-Carlo Option Pricing")
 url = "https://www.linkedin.com/in/luca-de-oliveira-424242236?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTfiF7SojRauelDIPie%2FQ5A%3D%3D"
 st.write("Application made by Luca De Oliveira: [link](%s)" % url)
-st.write("We can price options using Monte-Carlo simulations, which assumes a risk-neutral and arbitrage-free environment. First, we need to simulate Brownian motion using normal deviates (normally distributed entries). The normal deviates were computed using the Box-Muller method and uniform deviates. Finally, the Euler-Maruyama method was used to compute the path of the underlying price, such that prices change every minute of active trading. Therefore, options that have longer expirations will include more steps in the process.")
+st.write("We can price options using Monte-Carlo simulations, which assumes a risk-neutral and arbitrage-free environment. First, we need to simulate Brownian motion using normal deviates (normally distributed entries). The normal deviates were computed using the Box-Muller method and uniform deviates. Finally, the Euler-Maruyama method was used to compute the path of the underlying price.")
 
 col1, col2, col3 = st.columns(3)
 S = col1.number_input("Current Price", min_value=0.0, value=100.0, step=0.01)
