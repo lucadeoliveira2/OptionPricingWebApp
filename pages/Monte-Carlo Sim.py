@@ -45,16 +45,7 @@ for i in range(1, N):
     Sdf[i, :] = Sdf[i-1, :] * (1 + r * dt + vol * (W[i, :] - W[i-1, :]))
 Sdf = pandas.DataFrame(Sdf)
 
-# We then plot this
-
-for j in range(M):
-    sns.lineplot(Sdf.iloc[:, j])
-plt.title("Simulated Underlying Price")
-plt.xlabel("Timestep")
-plt.ylabel("Price ($)")
-st.pyplot()
-
-# Finally, we calculate the expected value of the option and discount it back to today's price
+# we calculate the expected value of the option and discount it back to today's price
 
 expsum = 0
 for j in range(M):
@@ -73,3 +64,15 @@ for j in range(M):
 meanval = expsum/M
 currentval = meanval*np.exp(-r*T)
 st.metric(label="Put Price", value=f"${currentval:,.3f}")
+
+# We then plot this
+
+plotMS = st.selectbox(options=['Yes', 'No'], label='Plot Results (Takes Significant Time)')
+
+if plotMS == 'Yes':
+    for j in range(M):
+        sns.lineplot(Sdf.iloc[:, j])
+    plt.title("Simulated Underlying Price")
+    plt.xlabel("Timestep")
+    plt.ylabel("Price ($)")
+    st.pyplot()
